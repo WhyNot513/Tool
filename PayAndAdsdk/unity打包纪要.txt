@@ -1,0 +1,27 @@
+1. 使用unity版本2019.4.39f1c1
+2.谷歌要求使用api31以上
+    （1）进入unity版本的目录 \2019.4.39f1c1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\tools\bin
+      (2)  执行./sdkmanager "platform-tools" "platforms;android-31"   安装api31的安卓sdk（注:脚本sdkmanager依赖java8，高版本的java不支持）
+
+3.导入ayoomi的sdk，导入后unity报错识别不了Newtonsoft，进入报错位置，在对应位置修改引入为using Unity.Plastic.Newtonsoft.Json.Linq;
+
+4.在adjust创建应用，同时将相关参数填入ayoomi后台
+
+5.正确填写项目内的公司名，包名，需要与ayoomi后台对得上
+
+6.勾选生成设置中的Custom Main Manifest
+
+7.生成设置切换至安卓平台
+
+8.在ayoomi的sdk设置页填入adjust token，点重新生成AndroidManifest.xml
+
+9.玩家设置-其他设置
+   （2）配置-脚本后端： IL2CPP （因为谷歌要求应用必须是64位）
+   （3）目标架构: ARM64 ARMV7
+      (4)  target devices: phones, Tablets, and TV Device
+文件名: txdtGame.keystore
+密码: 123tdxt321
+密钥值： 别名txdtgame   密码： 456tdxt654
+10. 发布设置: 使用密钥
+
+11.打abb包时，运行设置选择默认设备

@@ -1,0 +1,13 @@
+1.文件解压到 任意目录下
+
+
+2.Unity 编辑->Prefrences->外部工具 中
+取消勾选 Gradle Installed with Unity   
+并指定目录路径 为上面的解压目录
+
+3.PlayerSetting->安卓->发布设置中 勾选上 分割动画二进制
+  并在 生成面板上 勾选 Build App Bundle 
+  就可以打出 超过 150M大小的aab包 
+
+注意: Build 的场景的首个场景 以及相关内容会被打进 base包
+      base包 的压缩后大小 不能超过150M  
